@@ -12,11 +12,11 @@ public class BatchEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer batchId;
-	String batchName;
-	String description;
-	String batchType;
-	String startDate;
+	private Integer batchId;
+	private String batchName;
+	private String description;
+	private String batchType;
+	private String startDate;
 
 	public Integer getBatchId() {
 		return batchId;

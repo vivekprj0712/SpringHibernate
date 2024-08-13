@@ -12,9 +12,9 @@ public class StudentEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer studentId;
-	String studentName;
-	String gender;
+	private Integer studentId;
+	private String studentName;
+	private String gender;
 //	Integer fees; //remove 
 
 	public Integer getStudentId() {
