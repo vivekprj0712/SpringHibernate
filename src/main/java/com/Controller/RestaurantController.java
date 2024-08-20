@@ -1,6 +1,7 @@
 package com.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,6 +41,13 @@ public class RestaurantController {
 	public String deleteRestaurant(Model model , @RequestParam("restaurantId") Integer restaurantId) {
 		restaurantRepo.deleteById(restaurantId);
 		return "redirect:/listrestaurant";
+	}
+	
+	@GetMapping("editrestaurant")
+	public String editRestaurant(Model model , @RequestParam("restaurantId") Integer restaurantId) {
+		RestaurantEntity restaurant = restaurantRepo.findById(restaurantId).get();
+		model.addAttribute("restaurant", restaurant);
+		return "EditRestaurant";
 	}
 	
 	
